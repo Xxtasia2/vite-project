@@ -1,68 +1,142 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
 body {
   margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #2c3e50;
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  justify-content: center;
+  align-items: flex-start;
   min-height: 100vh;
+  padding: 2em;
+  box-sizing: border-box;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#root {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+h1, h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin: 0.5em 0;
+}
+
+p {
+  font-size: 1rem;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* ----------- BOTONES ----------- */
 
 button {
+  border: 2px solid transparent;
+  padding: 0.6em 1.4em;
+  font-size: 1rem;
+  font-weight: 600;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  margin: 0.3em;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* Botón GUARDAR y EDITAR → amarillo */
+button.guardar,
+button.editar {
+  background-color: #f1c40f;
+  color: #2c3e50;
+  border: 2px solid #f1c40f;
+}
+
+button.guardar:hover,
+button.editar:hover {
+  background-color: #d4ac0d;
+  border-color: #d4ac0d;
+  color: #fff;
+}
+
+/* Botón ELIMINAR y BORRAR → rojo */
+button.eliminar,
+button.borrar {
+  background-color: #e74c3c;
+  color: white;
+  border: 2px solid #e74c3c;
+}
+
+button.eliminar:hover,
+button.borrar:hover {
+  background-color: #c0392b;
+  border-color: #c0392b;
+}
+
+/* ----------- FORMULARIO ----------- */
+
+form {
+  background-color: #ffffff;
+  border: 1px solid #dcdde1;
+  padding: 1.5em;
+  margin-top: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 500px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
+  color: #34495e;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 0.5em;
+  margin: 0.3em 0 1em 0;
+  border: 1px solid #ccc;
+  border-radius: 0.3em;
+  width: 100%;
+  max-width: 300px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* ----------- LISTA DE ESTUDIANTES ----------- */
+
+.lista-estudiantes {
+  margin-top: 2em;
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+.estudiante {
+  background-color: #ecf0f1;
+  border: 1px solid #bdc3c7;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
+}
+
+/* ----------- ICONO / ESTADO VACÍO ----------- */
+
+.icono {
+  font-size: 1.4rem;
+  color: #f1c40f;
+  margin-right: 0.5em;
+}
+
+.empty-state {
+  color: #7f8c8d;
+  font-style: italic;
+  text-align: center;
 }
